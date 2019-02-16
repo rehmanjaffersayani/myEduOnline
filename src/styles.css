@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.success{
+    background-color: #007E33 !important;
+}
+
+.danger{
+    background-color: #FF8800 !important;
+}

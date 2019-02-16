@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="_data" class="example-container mat-elevation-z8">
+
+
+  <ng-container matColumnDef="Question">
+    <th mat-header-cell fxFlex  fxLayoutAlign="start center" *matHeaderCellDef> Question </th>
+    <td mat-cell fxFlex fxLayoutAlign="start center" *matCellDef="let element"> {{element.quest.name}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="Submitted">
+    <th mat-header-cell fxFlex  fxLayoutAlign="start center" *matHeaderCellDef> Submitted </th>
+    <td mat-cell fxFlex fxLayoutAlign="start center" *matCellDef="let element"> <mat-chip-list>
+      <mat-chip *ngIf='element.mark.submitted' class="success" selected >Successfull</mat-chip> 
+      <mat-chip *ngIf=!element.mark.submitted class="danger" selected >Pending</mat-chip> 
+    </mat-chip-list></td>
+  </ng-container>
+
+  <ng-container matColumnDef="Completed">
+    <th mat-header-cell fxFlex  fxLayoutAlign="start center" *matHeaderCellDef> Completed </th>
+    <td mat-cell fxFlex  fxLayoutAlign="start center" *matCellDef="let element"> {{element.mark.completion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Marks">
+    <th mat-header-cell fxFlex  fxLayoutAlign="start center" *matHeaderCellDef> Marks </th>
+    <td mat-cell fxFlex  fxLayoutAlign="start center" *matCellDef="let element"> {{element.mark.mark}} </td>
+  </ng-container>
+
+  
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

@@ -1,0 +1,10 @@
+<mat-card>
+        <mat-form-field>
+                <mat-select (selectionChange)="userSelected($event)" placeholder="Please Select User">
+                  <mat-option *ngFor="let user of _users" [value]="user.id">
+                    {{user.fullname}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+</mat-card>
+<app-results [events]="_selectedUser.asObservable()"></app-results>
